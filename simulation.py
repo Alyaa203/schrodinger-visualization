@@ -84,3 +84,4 @@ def density_surface(x, E_js, psi_js, cs, t_vals):
     for i, t in enumerate(t_vals):
         rho[i] = density_t(x, E_js, psi_js, cs, t)
     return rho
+
