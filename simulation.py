@@ -4,7 +4,6 @@ from scipy.sparse.linalg import eigsh
 from scipy.linalg import eigh_tridiagonal
 
 
-
 def build_grid_2d(N):
     X, Y = np.mgrid[0:1:N*1j, 0:1:N*1j]
     return X, Y
@@ -35,10 +34,9 @@ def get_mode_2d(eigenvectors, N, mode):
     return psi
 
 
-
 def build_grid_1d(Nx=301):
-    x = np.linspace(0, 1, Nx)
-    dx = 1 / (Nx - 1)
+    x  = np.linspace(0, 1, Nx)
+    dx = 1.0 / (Nx - 1)
     return x, dx
 
 
@@ -55,6 +53,7 @@ def solve_time_basis(Nx=301, mu=0.5, sigma=0.05, amplitude=-1e4, n_modes=70):
     psi0 = initial_state_1d(x)
     Vx = gaussian_potential_1d(x, mu=mu, sigma=sigma, amplitude=amplitude)
 
+    # Matrice tridiagonale sur les points interieurs (bords nuls imposes)
     d = 1 / dx**2 + Vx[1:-1]
     e = -1 / (2 * dx**2) * np.ones(len(d) - 1)
 
@@ -84,4 +83,3 @@ def density_surface(x, E_js, psi_js, cs, t_vals):
     for i, t in enumerate(t_vals):
         rho[i] = density_t(x, E_js, psi_js, cs, t)
     return rho
-
