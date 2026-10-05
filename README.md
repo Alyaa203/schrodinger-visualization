@@ -76,16 +76,4 @@ Then open http://localhost:8501.
 
 ---
 
-## Screenshots
-
-> _Screenshots coming soon._
-
-| 2D eigenmodes | Split-Step Fourier | Quantum art |
-| :---: | :---: | :---: |
-| ![2D eigenmodes](docs/screenshots/stationary-2d.png) | ![Split-Step Fourier](docs/screenshots/split-step.png) | ![Quantum art](docs/screenshots/art.png) |
-
-<!-- Add images to docs/screenshots/ using the file names above. -->
-
----
-
 **Author:** Alyaa Saab, engineering student at ENSC (Bordeaux INP)
